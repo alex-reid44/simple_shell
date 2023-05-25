@@ -7,7 +7,7 @@
 void handle_signal(int signal)
 {
 	char *prmpt = {"\n{^_^} "};
-	(void) sig;
+	(void) signal;
 
 	write(STDOUT_FILENO, prmpt, _strlen(prmpt));
 	fflush(stdout);
@@ -51,8 +51,8 @@ int _stat(char **cmd, char **path)
 
 	if (path == NULL)
 	{
-		f(path);
-		f(cmd);
+		free(path);
+		free(cmd);
 		return (0);
 	}
 
@@ -68,11 +68,11 @@ int _stat(char **cmd, char **path)
 			free(path);
 			return (1);
 		}
-		f(conc_str);
-		f(new_concat);
+		free(conc_str);
+		free(new_concat);
 	}
-	f(path[0]);
-	f(path);
+	free(path[0]);
+	free(path);
 	return (0);
 }
 
