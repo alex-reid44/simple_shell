@@ -37,7 +37,8 @@ char **_which(char *foundpath)
 
 
 /**
- * child_process - a function that executes a command if the path is an executable file
+ * child_process - a function that executes a command if the path is an
+ * executable file
  * @args: command to be executed
  * @env: a function that environment variable
  * @status_main: the status variable
