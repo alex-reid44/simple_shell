@@ -9,7 +9,7 @@ char **_which(char *foundpath)
 {
 	int s = TOK_BUFSIZE, j = 0;
 	char *copy_path = NULL, *tok = NULL, *sparse = ":=";
-	char **dir = _calloc(sizeof(char *), size);
+	char **dir = _calloc(sizeof(char *), s);
 
 	if (foundpath == NULL)
 	{
@@ -23,8 +23,8 @@ char **_which(char *foundpath)
 		return (NULL);
 	}
 
-	copy_path = _strdup(foundpath); /*copiar el string --> palabra PATH*/
-	tok = strtok(copy_path, sparse); /*separar el string por un separador*/
+	copy_path = _strdup(foundpath);
+	tok = strtok(copy_path, sparse);
 	while (tok != NULL)
 	{
 		dir[j] = tok;
@@ -91,7 +91,7 @@ char **search_path(char **environ)
 	int pos = 0;
 	char **token_path;
 
-	for (; environ[position] != NULL ; pos++)
+	for (; environ[pos] != NULL ; pos++)
 	{
 		if (environ[pos][0] == 'P' && environ[pos][2] == 'T')
 		{

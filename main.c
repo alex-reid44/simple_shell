@@ -17,7 +17,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 	while (1)
 	{
 		prompt();
-		l = read_input()
+		l = read_input();
 		args = sparse_str(l, env);
 
 		if ((_strcmp(args[0], "\n") != 0) && (_strcmp(args[0], "env") != 0))

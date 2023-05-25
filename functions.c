@@ -79,7 +79,7 @@ char **sparse_str(char *line, char **env)
 	if ((_strcmp(tok[0], "exit") == 0) && tok[1] == NULL)
 	{
 		free(line); /*Free the memory and exit the program*/
-		free(tokens);
+		free(tok);
 		exit(0);
 	}
 	if ((_strcmp(tok[0], "env") == 0) && tok[1] == NULL)
