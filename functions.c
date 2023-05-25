@@ -22,7 +22,7 @@ char *read_input(void)
 		free(line);
 		return (NULL);
 	}
-	else if (signal == EOF)
+	else if (sig == EOF)
 	{
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, "\n", 1);
